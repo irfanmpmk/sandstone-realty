@@ -17,24 +17,23 @@ export default async function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/45 to-ink/75" />
         </div>
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 pt-24 pb-28 sm:pt-32 sm:pb-36 text-white">
-          <p className="text-sand-200 text-sm font-semibold uppercase tracking-[0.2em]">Dubai real estate</p>
-          <h1 className="font-display text-4xl sm:text-6xl leading-tight mt-3 max-w-3xl">Find a home that fits the way you live.</h1>
+          <h1 className="font-display text-4xl sm:text-6xl leading-tight max-w-3xl">Find a home that fits the way you live.</h1>
           <p className="mt-4 max-w-xl text-white/85">
             Apartments, villas and off-plan homes across Dubai, with honest prices and agents who answer the phone.
           </p>
           <div className="mt-8">
             <SearchBar areas={areas.map((a) => a.area)} />
           </div>
+          <p className="mt-4 text-sm text-white/80">
+            {areas.reduce((n, a) => n + a.count, 0)} homes listed across {areas.length} Dubai neighbourhoods
+          </p>
         </div>
       </section>
 
       {/* FEATURED */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 mt-16">
         <div className="flex items-end justify-between gap-4">
-          <div>
-            <p className="text-sand-600 text-xs font-semibold uppercase tracking-[0.2em]">Featured</p>
-            <h2 className="font-display text-3xl mt-1">Handpicked this week</h2>
-          </div>
+          <h2 className="font-display text-3xl">Handpicked this week</h2>
           <Link href="/properties" className="text-sm font-semibold underline underline-offset-4 hover:text-sand-600">
             All properties
           </Link>
@@ -48,8 +47,7 @@ export default async function Home() {
 
       {/* AREAS */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 mt-16">
-        <p className="text-sand-600 text-xs font-semibold uppercase tracking-[0.2em]">Neighbourhoods</p>
-        <h2 className="font-display text-3xl mt-1">Browse by area</h2>
+        <h2 className="font-display text-3xl">Browse by area</h2>
         <div className="mt-6 flex flex-wrap gap-3">
           {areas.map((a) => (
             <Link
@@ -66,8 +64,7 @@ export default async function Home() {
       {/* WHY + CONTACT */}
       <section id="contact" className="max-w-6xl mx-auto px-4 sm:px-6 mt-20 grid gap-10 lg:grid-cols-2 scroll-mt-24">
         <div>
-          <p className="text-sand-600 text-xs font-semibold uppercase tracking-[0.2em]">Talk to us</p>
-          <h2 className="font-display text-3xl mt-1">Not sure where to start?</h2>
+          <h2 className="font-display text-3xl">Not sure where to start?</h2>
           <p className="mt-3 text-ink-soft max-w-md">
             Tell us your budget and what matters to you. An agent will call you back with a shortlist, usually within the hour.
           </p>
